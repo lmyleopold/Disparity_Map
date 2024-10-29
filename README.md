@@ -110,4 +110,4 @@ For more detailed discussions of the results, refer to the [project report](repo
 - Further improvements can be made by incorporating techniques like Semi-Global Matching (SGM) and using machine learning methods to learn disparity directly from data.
 - Future work could also involve real-time stereo vision applications using optimized versions of these algorithms.
 
-This project demonstrates how various methods contribute to improved depth estimation in stereo vision, and the insights gained can be applied to more complex scenarios in computer vision.
+This project demonstrates how various methods contribute to improved depth estimation in stereo vision, and the insights gained can be applied to more complex scenarios in computer vision. 
