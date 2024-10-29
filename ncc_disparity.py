@@ -58,6 +58,7 @@ def compute_disparity_map_ncc(args):
     disparity_map_normalized = cv2.normalize(disparity_map, None, 0, 255, cv2.NORM_MINMAX)
     disparity_map_normalized = disparity_map_normalized.astype(np.uint8)
 
-    plt.imshow(disparity_map_normalized, cmap='gray')
-    plt.savefig(f'{args.left_image_path[:-5]}_disparity_map_ncc.png')
+    filename = args.left_image_path[:-5].split('/')[-1]
+    plt.imshow(disparity_map_normalized, cmap='hot')
+    plt.savefig(f'./output/{filename}_disparity_map_ncc.png')
     plt.show()
