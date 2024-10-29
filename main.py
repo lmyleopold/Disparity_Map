@@ -15,7 +15,7 @@ if __name__ == '__main__':
                         help='The path to the left image')
     parser.add_argument('--right_image_path', type=str, default='data/corridorr.jpg',
                         help='The path to the right image')
-    parser.add_argument('--all_images_flag', type=bool, default='False',
+    parser.add_argument('--all_images_flag', type=bool, default=False,
                         help='The path to the right image')
     parser.add_argument('--all_images', type=str, default='./data/',
                         help='The path to the right image')
