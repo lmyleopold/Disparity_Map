@@ -104,7 +104,7 @@ def compute_disparity_map_cost_aggregation_weighted_filtering(args):
     median_filtered_disparity_map = apply_weighted_median_filter(disparity_map=disparity_map_normalized, kernel_size=7)
 
     filename = args.left_image_path[:-5].split('/')[-1]
-    plt.imshow(median_filtered_disparity_map, cmap='hot')
+    plt.imshow(median_filtered_disparity_map, cmap='grey')
     plt.savefig(f'./output/{filename}_disparity_map_costagg_weighted._filtering.png')
     plt.show()
 

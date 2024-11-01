@@ -3,13 +3,14 @@ from sad_disparity import compute_disparity_map_sad
 from ncc_disparity import compute_disparity_map_ncc
 from cost_aggregation_disparity import compute_disparity_map_cost_aggregation
 from weighted_median_filtering import compute_disparity_map_cost_aggregation_weighted_filtering
+from semi_global_matching import compute_disparity_map_semi_global_matching
 import os
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Disparity Map Calculation with Different Methods')
-    parser.add_argument('--method', type=str, choices=['SAD', 'NCC', 'CostAggregation', 'CostAggregation_WeightedFiltering', 'all'], default='SAD',
-                        help='Choose the disparity map method: SAD, NCC, CostAggregation, CostAggregation_WeightedFiltering or for all')
+    parser.add_argument('--method', type=str, choices=['SAD', 'NCC', 'CostAggregation', 'CostAggregation_WeightedFiltering', 'Semi_global_matching', 'all'], default='SAD',
+                        help='Choose the disparity map method: SAD, NCC, CostAggregation, CostAggregation_WeightedFiltering, Semi_global_matching or for all')
 
     parser.add_argument('--left_image_path', type=str, default='data/corridorl.jpg',
                         help='The path to the left image')
@@ -42,6 +43,8 @@ if __name__ == '__main__':
                 compute_disparity_map_cost_aggregation(args)
             elif args.method == 'CostAggregation_WeightedFiltering':
                 compute_disparity_map_cost_aggregation_weighted_filtering(args)
+            elif args.method == 'Semi_global_matching':
+                compute_disparity_map_semi_global_matching(args)
             elif args.method == 'all':
                 compute_disparity_map_sad(args)
                 compute_disparity_map_ncc(args)
@@ -57,6 +60,8 @@ if __name__ == '__main__':
             compute_disparity_map_cost_aggregation(args)
         elif args.method == 'CostAggregation_WeightedFiltering':
             compute_disparity_map_cost_aggregation_weighted_filtering(args)
+        elif args.method == 'Semi_global_matching':
+            compute_disparity_map_semi_global_matching(args)
         elif args.method == 'all':
             compute_disparity_map_sad(args)
             compute_disparity_map_ncc(args)
